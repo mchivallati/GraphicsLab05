@@ -5,60 +5,61 @@ import java.awt.*;
 /**
  * Created by CompSci-04 on 12/16/2014.
  */
+
 public class Box
 {
 
-	private Point boxCenter;
-	private Point boxTopLeft;
-	private Point boxTopRight;
-	private Point boxBottomLeft;
-	private Point boxBottomRight;
-	private Point p1;
-	private Point p2;
-	private Point p3;
+	private int topLeftX;	// top left X coordinate of the Box position
+	private int topLeftY;	// top left y coordinate of the Box position
+	private int width;	// width of the box
+	private int height; // height of the box
 
-	public Box( Graphics g ) //assigns the default points to make a box
+	public Box( Graphics g )
 	{
-
-		boxCenter = new Point( 0 , 0 );
-		boxTopLeft = new Point( 0 , 0 );
-		boxTopRight = new Point( 0 , 0 );
-		boxBottomLeft = new Point( 0 , 0 );
-		boxBottomRight = new Point( 0 , 0 );
-		p1 = new Point( 0 , 0 );
-		p2 = new Point( 0 , 0 );
-		p3 = new Point( 0 , 0 );
-
+		
+		topLeftX = 50;
+		topLeftY = 50;
+		width = 50;
+		height = 25;
+		
 	}
 
-	public Box( Graphics g , Point boxCenter , int boxWidth , int boxHeight )
+	public Box( Graphics g , int x , int y , int w , int h )
 	{
-
-		this.boxCenter = boxCenter;
-		this.boxTopLeft = new Point( boxCenter.getX() - ( boxWidth / 2 ) , boxCenter.getY() - ( boxHeight / 2 ) );
-		this.boxTopRight  = new Point( boxCenter.getX() + ( boxWidth / 2 ) , boxCenter.getY() - ( boxHeight / 2 ) );
-		this.boxBottomLeft = new Point( boxCenter.getX() - ( boxWidth / 2 ) , boxCenter.getY() + ( boxHeight / 2 ) );
-		this.boxBottomRight  = new Point( boxCenter.getX() + ( boxWidth / 2 ) , boxCenter.getY() + ( boxHeight / 2 ) );
-
-		this.p1 = new Point( this.boxTopLeft.getX() - ( boxWidth / 3 ) , this.boxTopLeft.getY() - ( boxHeight / 3 ) );
-		this.p2 = new Point( this.boxBottomLeft.getX() - ( boxWidth / 3 ) , this.boxBottomLeft.getY() - ( boxHeight / 3 ) );
-		this.p3 = new Point( this.boxTopRight.getX() - ( boxWidth / 3 ) , this.boxTopRight.getY() - ( boxHeight / 3 ) );
-
+		
+		topLeftX = x;
+		topLeftY = y;
+		width = w;
+		height = h;
+		
 	}
-
-	public Point getBoxCenter() { return boxCenter; }
-
-	public Point getBoxTopLeft() { return boxTopLeft; }
-
-	public Point getBoxBottomLeft() { return boxBottomLeft; }
-
-	public Point getBoxBottomRight() { return boxBottomRight; }
 
 	public void drawBox( Graphics g )
 	{
-
-
-
+		
+		int topLeftX2 = topLeftX + width / 3;
+		int topLeftY2 = topLeftY + height / 3;
+		
+		g.setColor( Color.black );
+		
+		g.drawRect( topLeftX , topLeftY , width , height );
+		g.drawRect( topLeftX2 , topLeftY2 , width , height );
+		
+		g.drawLine( topLeftX , topLeftY , topLeftX2 , topLeftY2 );
+		g.drawLine( topLeftX + width , topLeftY , topLeftX2 + width , topLeftY2 );
+		g.drawLine( topLeftX , topLeftY + height , topLeftX2 , topLeftY2 + height );
+		g.drawLine( topLeftX + width ,topLeftY + height , topLeftX2 + width , topLeftY2 + height );
+		
 	}
 
+	public void moveBox( Graphics g , int x , int y )
+	{
+
+		topLeftX = x;
+		topLeftY = y;
+
+		drawBox( g );
+
+	}
+	
 }
