@@ -1,5 +1,7 @@
 package net.franklinps.chivallati.GraphicsLab05;
 
+import net.franklinps.chivallati.Util;
+
 import java.awt.*;
 
 /**
@@ -36,20 +38,24 @@ public class Box
 
 	public void drawBox( Graphics g )
 	{
-		
+
 		int topLeftX2 = topLeftX + width / 3;
 		int topLeftY2 = topLeftY + height / 3;
+
+		Util.setColorRandomAlpha( g , 44 , 71 , 112 , 100 , 255 );
 		
-		g.setColor( Color.black );
+		//g.drawRect( topLeftX , topLeftY , width , height );
 		
-		g.drawRect( topLeftX , topLeftY , width , height );
 		g.drawRect( topLeftX2 , topLeftY2 , width , height );
+		
+		g.drawLine( topLeftX , topLeftY , topLeftX , topLeftY + height );
+		g.drawLine( topLeftX , topLeftY , topLeftX + width , topLeftY );
 		
 		g.drawLine( topLeftX , topLeftY , topLeftX2 , topLeftY2 );
 		g.drawLine( topLeftX + width , topLeftY , topLeftX2 + width , topLeftY2 );
 		g.drawLine( topLeftX , topLeftY + height , topLeftX2 , topLeftY2 + height );
-		g.drawLine( topLeftX + width ,topLeftY + height , topLeftX2 + width , topLeftY2 + height );
-
+		
+		//g.drawLine( topLeftX + width ,topLeftY + height , topLeftX2 + width , topLeftY2 + height );
 		
 	}
 
@@ -62,5 +68,21 @@ public class Box
 		drawBox( g );
 
 	}
+	
+	public int getTopLeftX() { return topLeftX; }
+	
+	public int getTopLeftY() { return topLeftY; }
+	
+	public int getWidth() { return width; }
+	
+	public int getHeight() { return height; }
+	
+	public void setTopLeftX( int x ) { topLeftX = x; }
+	
+	public void setTopLeftY( int y ) { topLeftY = y; }
+	
+	public void setWidth( int w ) { width = w;}
+	
+	public void setHeight( int h ) { height = h; }
 
 }

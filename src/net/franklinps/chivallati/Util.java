@@ -70,9 +70,7 @@ public class Util
 
 		int range = max - min; //used to control the maximum value the random method outputs
 
-		int randomNum = (int) ( ( Math.random( ) * range ) + min ); // generates the random value between the min and max value that were passed into the formal param
-
-		return randomNum; //returns the value generated to randomNum( int min , int max )
+		return (int) ( ( Math.random( ) * range ) + min ); //returns the value generated to randomNum( int min , int max )
 
 	}
 
@@ -87,10 +85,8 @@ public class Util
 
 		int y[] = { y1 , y2 , y3 , y4 }; //an array for the 4 y coords of the 4 points of the quad
 
-		Polygon quad = new Polygon( x, y, 4 ); //creates the quad using the
 
-
-		return quad; //returns the new quad to where the it was called in a g.drawPolygon(); statement
+		return new Polygon( x, y, 4 ); //returns the new quad to where the it was called in a g.drawPolygon(); statement
 
 	}
 
@@ -105,9 +101,7 @@ public class Util
 
 		int y[] = { y1 , y2 , y3 };
 
-		Polygon tri = new Polygon( x, y, 3 );
-
-		return tri;
+		return new Polygon( x, y, 3 );
 
 	}
 
@@ -121,10 +115,8 @@ public class Util
 
 		int y[] = { y1 , y2 , y3 , y4 , y5 };
 
-		Polygon penta = new Polygon( x, y, 5 );
 
-
-		return penta;
+		return new Polygon( x, y, 5 );
 
 	}
 

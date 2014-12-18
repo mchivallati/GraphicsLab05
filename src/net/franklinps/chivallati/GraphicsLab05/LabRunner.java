@@ -12,9 +12,11 @@ public class LabRunner extends Applet
 	public void paint(Graphics g)
 	{
 
-		Box box1 = new Box();
-
-		box1.drawBox( g ); // Austin just check the Box class that I made
+		Box b1 = new Box();
+		
+		b1.drawBox( g );
+		
+		Present p1 = new Present( 50 , 50 , 300 , 150 );
 
 	}
 }
