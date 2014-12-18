@@ -8,11 +8,13 @@ import java.applet.*;
  */
 public class LabRunner extends Applet
 {
-	
-	Graphics g;
-	
-	Box box1 = new Box();
 
-	box1.drawBox( g ); // Austin just check the Box class that I made
-	
+	public void paint(Graphics g)
+	{
+
+		Box box1 = new Box();
+
+		box1.drawBox( g ); // Austin just check the Box class that I made
+
+	}
 }

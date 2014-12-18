@@ -49,6 +49,7 @@ public class Box
 		g.drawLine( topLeftX + width , topLeftY , topLeftX2 + width , topLeftY2 );
 		g.drawLine( topLeftX , topLeftY + height , topLeftX2 , topLeftY2 + height );
 		g.drawLine( topLeftX + width ,topLeftY + height , topLeftX2 + width , topLeftY2 + height );
+
 		
 	}
 
