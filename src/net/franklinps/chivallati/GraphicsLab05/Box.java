@@ -14,7 +14,7 @@ public class Box
 	private int width;	// width of the box
 	private int height; // height of the box
 
-	public Box( Graphics g )
+	public Box()
 	{
 		
 		topLeftX = 50;
@@ -24,7 +24,7 @@ public class Box
 		
 	}
 
-	public Box( Graphics g , int x , int y , int w , int h )
+	public Box( int x , int y , int w , int h )
 	{
 		
 		topLeftX = x;
@@ -61,5 +61,5 @@ public class Box
 		drawBox( g );
 
 	}
-	
+
 }
