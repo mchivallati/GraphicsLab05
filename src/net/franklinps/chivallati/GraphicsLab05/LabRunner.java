@@ -13,6 +13,6 @@ public class LabRunner extends Applet
 	
 	Box box1 = new Box(g);
 	
-	box1.drawBox(g);
+	box1.drawBox(g); // DA FUQ ???!!!!!!
 	
 }
