@@ -7,10 +7,7 @@ GraphicsLab05
 - To gain a better understanding of class interaction using examples of composition and inheritance
 
 ####Program Elements
-- Initial Idea (Christmas Present with background theme)
-- Box Class
-    - Present Class
-        - Ribbons
-        - Bows
-- Point Class
-- Christmas Scene (Class logic not complete)
+- [x] Initial Idea (Christmas Present with background theme)
+- [ ] Box Class
+- [ ] Present Class
+- [ ] Christmas Scene (Class logic not complete)
