@@ -65,16 +65,16 @@ public class Present extends Box
 	public void horizLineWrapping( Graphics g )
 	{
 
-		Util.setRandomGrayscale( g , 100 , 255 );
+		Util.setRandomGrayscale( g , 0 , 50 );
 
-		g.fillRect( presentX , presentY , presentWidth , presentHeight );
+		g.fillRect( presentX + presentWidth / 3 , presentY + presentHeight / 3 , presentWidth , presentHeight );
 
-		for ( int i = presentY ; i < presentHeight + presentY ; i += presentHeight / 4 )
+		for ( int i = presentY + presentHeight / 3 ; i < presentHeight + presentY ; i += presentHeight / 2 )
 		{
 
 			Util.setRandomColor(g);
 
-			g.fillRect( presentX , i , presentWidth , presentHeight / 4 );
+			g.fillRect( presentX + presentWidth / 3 , i , presentWidth , presentHeight / 4 );
 
 		}
 
