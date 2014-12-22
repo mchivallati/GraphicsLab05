@@ -77,6 +77,8 @@ public class Present extends Box
 			g.fillRect( presentX + presentWidth / 3 , i , presentWidth , presentHeight / 4 );
 
 		}
+
+		int iRobot = 0;
 		
 		for ( int i = presentY + presentHeight / 3 ; i <= presentY + presentHeight ; i += presentHeight / 2 )
 		{
@@ -84,7 +86,7 @@ public class Present extends Box
 			Util.setColorRandomAlpha( g, 255, 0, 0, 150, 225 );
 
 			g.fillPolygon( Util.quad( presentX ,
-			                          presentY ,
+			                          presentY + iRobot ,
 
 			                          ( presentX + presentWidth / 3 ),
 			                          i ,
@@ -93,9 +95,11 @@ public class Present extends Box
 			                          ( i + presentHeight / 3 ),
 
 			                          presentX,
-			                          presentY + presentHeight / 3
+			                          ( presentY + presentHeight / 3 ) + iRobot
 			               )
 			);
+			
+			iRobot += i;
 
 		}
 
