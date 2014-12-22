@@ -90,7 +90,8 @@ public class Present extends Box
 		                          ( presentY + presentHeight / 3 ) + presentHeight ,
 		                          
 		                          presentX,
-		                          presentY + presentHeight ) );
+		                          presentY + presentHeight ) 
+								);
 
 	}
 
