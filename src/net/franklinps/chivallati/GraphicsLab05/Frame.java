@@ -7,23 +7,13 @@ import java.awt.*;
 /**
  * Created by CompSci-04 on 12/19/2014.
  */
-public class Frame
+class Frame
 {
 
-	private int frameWidth;
-	private int frameHeight;
-	private int frameX;
-	private int frameY;
-
-	public Frame()
-	{
-
-		this.frameWidth = 100;
-		this.frameHeight = 100;
-		this.frameX = 10;
-		this.frameY = 10;
-
-	}
+	private final int frameWidth;
+	private final int frameHeight;
+	private final int frameX;
+	private final int frameY;
 
 	public Frame( int fw , int fh , int fx , int fy )
 	{
