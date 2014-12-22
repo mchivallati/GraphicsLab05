@@ -77,21 +77,27 @@ public class Present extends Box
 			g.fillRect( presentX + presentWidth / 3 , i , presentWidth , presentHeight / 4 );
 
 		}
-
-		Util.setColorRandomAlpha( g , 0 , 255 , 0 , 150 , 225 );
 		
-		g.fillPolygon( Util.quad( presentX ,
-		                          presentY ,
-		                          
-		                          ( presentX + presentWidth / 3 ) ,
-		                          presentY + presentHeight / 3 ,
-		                          
-		                          ( presentX + presentWidth / 3 ) ,
-		                          ( presentY + presentHeight / 3 ) + presentHeight ,
-		                          
-		                          presentX,
-		                          presentY + presentHeight ) 
-								);
+		for ( int i = presentY + presentHeight / 3 ; i <= presentY + presentHeight ; i += presentHeight / 2 )
+		{
+
+			Util.setColorRandomAlpha( g, 255, 0, 0, 150, 225 );
+
+			g.fillPolygon( Util.quad( presentX ,
+			                          presentY ,
+
+			                          ( presentX + presentWidth / 3 ),
+			                          i ,
+
+			                          ( presentX + presentWidth / 3 ),
+			                          ( i + presentHeight / 3 ),
+
+			                          presentX,
+			                          presentY + presentHeight / 3
+			               )
+			);
+
+		}
 
 	}
 
