@@ -11,10 +11,10 @@ import java.awt.*;
 public class Box
 {
 
-	private int topLeftX;	// top left X coordinate of the Box position
-	private int topLeftY;	// top left y coordinate of the Box position
-	private int width;	// width of the box
-	private int height; // height of the box
+	protected int topLeftX;	// top left X coordinate of the Box position
+	protected int topLeftY;	// top left y coordinate of the Box position
+	protected int width;	// width of the box
+	protected int height; // height of the box
 
 	public Box()
 	{
@@ -26,13 +26,27 @@ public class Box
 		
 	}
 
-	public Box( int x , int y , int w , int h )
+	public Box( Graphics g )
+	{
+
+		topLeftX = 50;
+		topLeftY = 50;
+		width = 50;
+		height = 25;
+
+		drawBox(g);
+
+	}
+
+	public Box( Graphics g ,  int x , int y , int w , int h )
 	{
 		
 		topLeftX = x;
 		topLeftY = y;
 		width = w;
 		height = h;
+
+		drawBox(g);
 		
 	}
 
@@ -42,7 +56,6 @@ public class Box
 		int topLeftX2 = topLeftX + width / 3;
 		int topLeftY2 = topLeftY + height / 3;
 
-		Util.setColorRandomAlpha( g , 44 , 71 , 112 , 100 , 255 );
 		
 		//g.drawRect( topLeftX , topLeftY , width , height );
 		

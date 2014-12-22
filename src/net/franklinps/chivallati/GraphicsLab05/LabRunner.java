@@ -12,11 +12,19 @@ public class LabRunner extends Applet
 	public void paint(Graphics g)
 	{
 
-		Box b1 = new Box();
-		
-		b1.drawBox( g );
-		
-		Present p1 = new Present( 50 , 50 , 300 , 150 );
+		//theFrame( g );
+
+		Present p1 = new Present( g , 50 , 50 , 200 , 150 , 1 );
 
 	}
+
+	public void theFrame(Graphics g)
+	{
+
+		Frame scene = new Frame( 200 , 200 , 200 , 200 );
+
+		scene.frameBorder( g );
+
+	}
+
 }
