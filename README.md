@@ -24,7 +24,6 @@ This Lab consists of the Classes:
 - To gain a better understanding of class interaction using examples of composition and inheritance
 
 ####Program Elements
-- [x] Initial Idea (Christmas Present with background theme)
 - [x] Box Class
 - [x] Present Class
 - [x] Tree Classes
@@ -32,6 +31,7 @@ This Lab consists of the Classes:
     - [x] TreeLeaves Class
     - [x] TreeTrunk Class
     - [x] ChristmasTree Class
+
 --------------------------------
 
 ###Class Interaction
