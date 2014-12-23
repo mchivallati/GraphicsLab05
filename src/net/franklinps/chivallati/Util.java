@@ -22,6 +22,22 @@ public class Util
 
 	}
 
+	public static void setRandomColor( Graphics g , int minAlpha , int maxAlpha )
+	{
+
+		int red = randomInt( 0, 255 ); // generates the random value between the min and max value that were passed into the formal param
+
+		int green = randomInt( 0, 255 ); // generates the random value between the min and max value that were passed into the formal param
+
+		int blue = randomInt( 0, 255 ); // generates the random value between the min and max value that were passed into the formal param
+
+		int alpha = randomInt( minAlpha , maxAlpha );
+
+
+		g.setColor( new Color( red, green, blue , alpha ) ); //creates and sets the color to a random color
+
+	}
+
 
 	public static void setColorRandomAlpha( Graphics g, int red, int green, int blue, int minAlpha, int maxAlpha ) //creates and sets the color to a random shade of a color with the specified red, green, and blue value in the actual param ***NONE OF THE PARAMS CAN BE > 256***
 	{
