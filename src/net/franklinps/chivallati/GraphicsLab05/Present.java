@@ -43,6 +43,7 @@ public class Present extends Box
 		{
 
 			case 1 : horizLineWrapping(g);
+			case 2 : dotWrapping(g);
 
 		}
 
@@ -51,7 +52,19 @@ public class Present extends Box
 	public void dotWrapping( Graphics g )
 	{
 
+		int diam = 20;
 
+		for ( int i = 0 ; i < 40 ; i++ )
+		{
+
+			int randomX = Util.randomInt( presentX / 3 , ( presentX / 3 ) + presentWidth );
+			int randomY = Util.randomInt( presentY / 3 , ( presentY / 3 ) + presentHeight );
+
+			Util.setRandomColor( g , 175 , 225 );
+
+			g.fillOval( randomX , randomY , diam , diam );
+
+		}
 
 	}
 
@@ -78,7 +91,7 @@ public class Present extends Box
 
 		}
 
-		int iRobot = 0;
+		int i2 = 0;
 		
 		for ( int i = presentY + presentHeight / 3 ; i <= presentY + presentHeight ; i += presentHeight / 2 )
 		{
@@ -86,7 +99,7 @@ public class Present extends Box
 			Util.setColorRandomAlpha( g, 255, 0, 0, 150, 225 );
 
 			g.fillPolygon( Util.quad( presentX ,
-			                          presentY + iRobot ,
+			                          presentY + i2 ,
 
 			                          ( presentX + presentWidth / 3 ),
 			                          i ,
@@ -95,13 +108,29 @@ public class Present extends Box
 			                          ( i + presentHeight / 3 ),
 
 			                          presentX,
-			                          ( presentY + presentHeight / 3 ) + iRobot
+									  ( presentY + presentHeight / 3 ) + i2
 			               )
 			);
 			
-			iRobot += i;
+			i2 += ( i / 2 ) + ( i / 2 ) - ( i / 4 );
 
 		}
+
+		Util.setColorRandomAlpha( g , 255 , 0 , 0 , 50 , 125 );
+
+		g.fillPolygon( Util.quad( presentX ,
+								  presentY ,
+
+								  presentX + presentWidth ,
+								  presentY ,
+
+								  ( presentX + presentWidth / 3 ) + presentWidth ,
+								  ( presentY + presentHeight / 3 ) ,
+
+								  presentX + presentWidth / 3 ,
+								  presentY + presentHeight / 3
+								)
+					);
 
 	}
 

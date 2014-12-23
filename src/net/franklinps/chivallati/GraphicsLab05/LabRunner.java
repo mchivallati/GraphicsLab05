@@ -14,7 +14,7 @@ public class LabRunner extends Applet
 
 		theFrame( g );
 
-		new Present( g , 50 , 50 , 200 , 150 , 1 );
+		new Present( g , 50 , 50 , 200 , 150 , 2 );
 
 	}
 
