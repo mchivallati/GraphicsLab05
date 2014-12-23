@@ -11,10 +11,17 @@ public class LabRunner extends Applet
 
 	public void paint(Graphics g)
 	{
+		
+		Point p1 = new Point( 40 , 200 );
+		Point p2 = new Point( 120 , 205 );
 
-		new Frame( g , 10 , 10 , 800 , 600 );
+		//new Frame( g , 10 , 10 , 800 , 600 );
 
-		new Present( g , 50 , 50 , 75 , 50 , 2 );
+		new Present( g , p1.getX() , p1.getY() , 30 , 15 , 1 );
+
+		new Present( g , p2.getX() , p2.getY() , 40 , 15 , 2 );
+		
+		new Tree( g , 50 , 50 );
 
 	}
 

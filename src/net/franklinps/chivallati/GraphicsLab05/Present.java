@@ -44,27 +44,7 @@ public class Present extends Box
 
 			case 1 : redLineWrapping(g); break;
 			case 2 : greenLineWrapping(g); break;
-			case 3 : dotWrapping(g); break;
 			default : System.out.println( "Your type of wrapping does not exist. HINT: Wrapping types are 1 - 3" );
-
-		}
-
-	}
-
-	public void dotWrapping( Graphics g )
-	{
-
-		int diam = 20;
-
-		for ( int i = 0 ; i < 30 ; i++ )
-		{
-
-			int randomX = Util.randomInt( presentX + presentX / 3 , ( presentX +  presentX / 3 ) + presentWidth );
-			int randomY = Util.randomInt( presentY + presentY / 3 , ( presentY +  presentY / 3 ) + presentHeight );
-
-			Util.setRandomColor( g , 175 , 225 );
-
-			g.fillOval( randomX , randomY , diam , diam );
 
 		}
 
@@ -118,59 +98,46 @@ public class Present extends Box
 	public void redLineWrapping( Graphics g )
 	{
 
-		Util.setRandomGrayscale( g , 0 , 50 );
-
-		g.fillRect( presentX + presentWidth / 3 , presentY + presentHeight / 3 , presentWidth , presentHeight );
-
-		for ( int i = presentY + presentHeight / 3 ; i <= presentHeight + presentY ; i += presentHeight / 2 )
-		{
-
-			Util.setColorRandomAlpha( g , 255 , 0 , 0 , 150 , 225 );
-
-			g.fillRect( presentX + presentWidth / 3 , i , presentWidth , presentHeight / 4 );
-
-		}
-
-		int i2 = 0;
+		int i = presentY + presentHeight / 3;
 		
-		for ( int i = presentY + presentHeight / 3 ; i <= presentY + presentHeight ; i += presentHeight / 2 )
-		{
 
 			Util.setColorRandomAlpha( g, 255, 0, 0, 150, 225 );
 
-			g.fillPolygon( Util.quad( presentX ,
-			                          presentY + i2 ,
+				g.fillRect( presentX + presentWidth / 3, i, presentWidth, presentHeight / 4 );
+
+			Util.setColorRandomAlpha( g, 255, 0, 0, 150, 225 );
+
+				g.fillPolygon( Util.quad( presentX,
+			                          presentY,
 
 			                          ( presentX + presentWidth / 3 ),
-			                          i ,
+			                          i,
 
 			                          ( presentX + presentWidth / 3 ),
 			                          ( i + presentHeight / 3 ),
 
 			                          presentX,
-									  ( presentY + presentHeight / 3 ) + i2
+			                          ( presentY + presentHeight / 3 )
 			               )
 			);
-			
-			i2 += ( i / 2 ) + ( i / 2 ) - ( i / 4 );
 
-		}
 
-		Util.setColorRandomAlpha( g , 255 , 0 , 0 , 50 , 125 );
+			Util.setColorRandomAlpha( g, 255, 0, 0, 50, 125 );
 
-		g.fillPolygon( Util.quad( presentX ,
-								  presentY ,
+			g.fillPolygon( Util.quad( presentX,
+			                          presentY,
 
-								  presentX + presentWidth ,
-								  presentY ,
+			                          presentX + presentWidth,
+			                          presentY,
 
-								  ( presentX + presentWidth / 3 ) + presentWidth ,
-								  ( presentY + presentHeight / 3 ) ,
+			                          ( presentX + presentWidth / 3 ) + presentWidth,
+			                          ( presentY + presentHeight / 3 ),
 
-								  presentX + presentWidth / 3 ,
-								  presentY + presentHeight / 3
-								)
-					);
+			                          presentX + presentWidth / 3,
+			                          presentY + presentHeight / 3
+			               )
+			);
+
 
 	}
 

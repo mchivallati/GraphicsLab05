@@ -52,6 +52,8 @@ public class Box
 
 	public void drawBox( Graphics g )
 	{
+		
+		g.setColor( Color.black );
 
 		int topLeftX2 = topLeftX + width / 3;
 		int topLeftY2 = topLeftY + height / 3;
