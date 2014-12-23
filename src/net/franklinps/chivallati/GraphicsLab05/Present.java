@@ -42,8 +42,10 @@ public class Present extends Box
 		switch (selector)
 		{
 
-			case 1 : horizLineWrapping(g);
-			case 2 : dotWrapping(g);
+			case 1 : redLineWrapping(g); break;
+			case 2 : greenLineWrapping(g); break;
+			case 3 : dotWrapping(g); break;
+			default : System.out.println( "Your type of wrapping does not exist. HINT: Wrapping types are 1 - 3" );
 
 		}
 
@@ -54,11 +56,11 @@ public class Present extends Box
 
 		int diam = 20;
 
-		for ( int i = 0 ; i < 40 ; i++ )
+		for ( int i = 0 ; i < 30 ; i++ )
 		{
 
-			int randomX = Util.randomInt( presentX / 3 , ( presentX / 3 ) + presentWidth );
-			int randomY = Util.randomInt( presentY / 3 , ( presentY / 3 ) + presentHeight );
+			int randomX = Util.randomInt( presentX + presentX / 3 , ( presentX +  presentX / 3 ) + presentWidth );
+			int randomY = Util.randomInt( presentY + presentY / 3 , ( presentY +  presentY / 3 ) + presentHeight );
 
 			Util.setRandomColor( g , 175 , 225 );
 
@@ -68,14 +70,52 @@ public class Present extends Box
 
 	}
 
-	public void vertLineWrapping( Graphics g )
+	public void greenLineWrapping( Graphics g )
 	{
 
+		int i = presentY + presentHeight / 3;
 
+		Util.setColorRandomAlpha( g , 0 , 255 , 0 , 175 , 225 );
+
+			g.fillRect( presentX + presentWidth / 3 , i , presentWidth , presentHeight / 4 );
+
+		Util.setColorRandomAlpha( g, 0, 255, 0, 150, 225 );
+
+			g.fillPolygon( Util.quad( presentX ,
+							presentY ,
+
+							( presentX + presentWidth / 3 ),
+							i ,
+
+							( presentX + presentWidth / 3 ),
+							( i + presentHeight / 3 ),
+
+							presentX,
+							( presentY + presentHeight / 3 )
+					)
+			);
+
+
+
+		Util.setColorRandomAlpha( g , 0 , 255 , 0 , 50 , 125 );
+
+		g.fillPolygon( Util.quad( presentX ,
+						presentY ,
+
+						presentX + presentWidth ,
+						presentY ,
+
+						( presentX + presentWidth / 3 ) + presentWidth ,
+						( presentY + presentHeight / 3 ) ,
+
+						presentX + presentWidth / 3 ,
+						presentY + presentHeight / 3
+				)
+		);
 
 	}
 
-	public void horizLineWrapping( Graphics g )
+	public void redLineWrapping( Graphics g )
 	{
 
 		Util.setRandomGrayscale( g , 0 , 50 );
