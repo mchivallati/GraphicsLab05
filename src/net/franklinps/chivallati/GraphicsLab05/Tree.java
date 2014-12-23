@@ -10,9 +10,10 @@ import java.awt.*;
 public class Tree
 {
 	
-	protected int treeX;
-	protected int treeY;
+	private int treeX;
+	private int treeY;
 	
+	public Tree() {}
 
 	public Tree( Graphics g , int tx , int ty )
 	{
