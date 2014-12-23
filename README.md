@@ -8,6 +8,6 @@ GraphicsLab05
 
 ####Program Elements
 - [x] Initial Idea (Christmas Present with background theme)
-- [ ] Box Class
+- [x] Box Class
 - [ ] Present Class
 - [ ] Christmas Scene (Class logic not complete)
