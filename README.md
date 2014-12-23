@@ -20,10 +20,10 @@ This Lab consists of the Classes:
 - TreeTrunk.java
 - TreeLeaves.java
 
-####Objective
+#####Objective
 - To gain a better understanding of class interaction using examples of composition and inheritance
 
-####Program Elements
+#####Program Elements
 - [x] Box Class
 - [x] Present Class
 - [x] Tree Classes
