@@ -12,18 +12,9 @@ public class LabRunner extends Applet
 	public void paint(Graphics g)
 	{
 
-		theFrame( g );
+		new Frame( g , 10 , 10 , 800 , 600 );
 
-		new Present( g , 50 , 50 , 200 , 150 , 2 );
-
-	}
-
-	void theFrame(Graphics g)
-	{
-
-		Frame scene = new Frame( 360 , 285 , 10 , 10 );
-
-		scene.frameBorder( g );
+		new Present( g , 50 , 50 , 75 , 50 , 2 );
 
 	}
 
