@@ -15,7 +15,7 @@ public class LabRunner extends Applet
 		Point p1 = new Point( 40 , 200 );
 		Point p2 = new Point( 120 , 205 );
 
-		//new Frame( g , 10 , 10 , 800 , 600 );
+		new Frame( g , 10 , 10 , 300 , 250 );
 
 		new Present( g , p1.getX() , p1.getY( ) , 30 , 15 , 1 );
 
